@@ -1,0 +1,144 @@
+:root {
+    --default-font: 'Alef', sans-serif;
+    --default-radius: 1000px;
+    --default-border: 1px solid #CBD7E8;
+    --primary-color: #0168FC;
+    --input-width: 100%;
+    --button-width: 55%;
+    --button-font: 'Acme', sans-serif;
+}
+
+* {
+    font-family: var(--default-font);
+    box-sizing: border-box;
+}
+
+#table {
+    border-collapse: collapse;
+    display: none;
+}
+
+#table td {
+    border: var(--default-border);
+}
+
+#buttons, #main, .book-card, .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+#main {
+    flex-direction: row;
+    margin: 20px 40px 0;
+}
+
+#form {
+    flex: 0 1 40%;
+}
+
+#book-shelf {
+    flex: 0 1 55%;
+}
+
+/* Input styles */
+input {
+    width: var(--input-width);
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: var(--default-border);
+    border-radius: var(--default-radius);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+input[type=number] {
+    width: 50%;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Button styles */
+.b-fav, .b-read, #unread, #favorite, .b-remove, #submit-b {
+    padding: 10px 24px;
+    border-radius: var(--default-radius);
+    font-size: 95%;
+    cursor: pointer;
+}
+
+#submit-b, #unread, #favorite, .b-remove {
+    background: var(--primary-color);
+    color: white;
+}
+
+.b-fav, .b-read {
+    width: var(--button-width);
+    background-color: #F9F9F9;
+    border: var(--default-border);
+}
+
+.b-remove {
+    width: 75%;
+}
+
+/* Container styles */
+#container {
+    height: 500px;
+    overflow: auto;
+    scrollbar-width: thin;
+    width: 90%;
+}
+
+#container p {
+    margin: 9px 0;
+}
+
+.book-card {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D9D9D9;
+    flex-direction: row;
+}
+
+.text, .buttons {
+    flex: 1;
+}
+
+/* Typography */
+p, h2, h3 {
+    font-family: var(--default-font);
+}
+
+h3 {
+    margin-top: 0;
+}
+
+#submit-b {
+    transition: transform 0.3s ease; /* smooth transition for hover and active states */
+    cursor: pointer; /* change cursor to pointer when hovering over the button */
+}
+
+#submit-b:hover {
+    transform: scale(1.05); /* slightly scale up the button when hovered */
+}
+
+#submit-b:active {
+    transform: scale(0.95); /* slightly press down the button when clicked */
+}
+
+/* Apply Acme font to all buttons */
+.b-fav, .b-read, #unread, #favorite, .b-remove, #submit-b {
+    font-family: var(--button-font);
+}
+
+input::placeholder {
+    font-family: var(--button-font);
+}
+

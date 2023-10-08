@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alef&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<table id="table"></table>
+<div id="main">
+    <div id="book-shelf">
+        <h2>my bookshelf:</h2>
+
+        <p>total amount of books: <span id="num-books"></span></p>
+
+        <div id="buttons">
+            <button id="unread" onclick="getUnreadBooks()">number of unread</button>
+            <button id="favorite" onclick="getFavBooks()">number of favorite</button>
+        </div>
+
+        <div id="container">
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="form">
+        <h2 id="new-book">new book:</h2>
+
+        <form id="myform">
+            <input type="text" id="title" placeholder="Title" autocomplete="off"><br />
+            <input type="text" id="authors" placeholder="Authors" autocomplete="off"><br />
+            <input type="number" id="pages" placeholder="Number of pages"><br />
+            <input type="submit" id="submit-b" value="Add book">
+        </form>
+    </div>
+</div>
+<script src="scripts/script.js"></script>
+</body>
+</html>
