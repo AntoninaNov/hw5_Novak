@@ -1,11 +1,11 @@
 :root {
     --default-font: 'Alef', sans-serif;
+    --button-font: 'Acme', sans-serif;
     --default-radius: 1000px;
     --default-border: 1px solid #CBD7E8;
     --primary-color: #0168FC;
     --input-width: 100%;
     --button-width: 55%;
-    --button-font: 'Acme', sans-serif;
 }
 
 * {
@@ -25,7 +25,8 @@
 #buttons, #main, .book-card, .buttons {
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-bottom: 5px;
 }
 
 .buttons {
@@ -61,17 +62,27 @@ input[type=number] {
     width: 50%;
 }
 
+input:hover {
+    border-color: #acb8c7; /* Slightly darker border on hover */
+}
+
 input:focus {
     outline: none;
     border-color: #007bff;
 }
 
+input::placeholder {
+    font-family: var(--button-font);
+}
+
 /* Button styles */
 .b-fav, .b-read, #unread, #favorite, .b-remove, #submit-b {
-    padding: 10px 24px;
+    padding: 10px 26px;
     border-radius: var(--default-radius);
     font-size: 95%;
     cursor: pointer;
+    font-family: var(--button-font);
+    transition: transform 0.3s ease; /* Smooth transition for hover and active states */
 }
 
 #submit-b, #unread, #favorite, .b-remove {
@@ -87,6 +98,20 @@ input:focus {
 
 .b-remove {
     width: 75%;
+}
+
+#submit-b:hover, .b-fav:hover, .b-read:hover, #unread:hover, #favorite:hover, .b-remove:hover {
+    background-color: #0052cc; /* Slightly darker shade for hover */
+    transform: scale(1.05); /* Slightly scale up the button when hovered */
+}
+
+#submit-b:active {
+    transform: scale(0.95); /* Slightly press down the button when clicked */
+}
+
+.b-fav:focus, .b-read:focus, #unread:focus, #favorite:focus, .b-remove:focus, #submit-b:focus {
+    outline: 2px solid #007bff; /* Outline for focus */
+    outline-offset: 2px;
 }
 
 /* Container styles */
@@ -119,26 +144,3 @@ p, h2, h3 {
 h3 {
     margin-top: 0;
 }
-
-#submit-b {
-    transition: transform 0.3s ease; /* smooth transition for hover and active states */
-    cursor: pointer; /* change cursor to pointer when hovering over the button */
-}
-
-#submit-b:hover {
-    transform: scale(1.05); /* slightly scale up the button when hovered */
-}
-
-#submit-b:active {
-    transform: scale(0.95); /* slightly press down the button when clicked */
-}
-
-/* Apply Acme font to all buttons */
-.b-fav, .b-read, #unread, #favorite, .b-remove, #submit-b {
-    font-family: var(--button-font);
-}
-
-input::placeholder {
-    font-family: var(--button-font);
-}
-
